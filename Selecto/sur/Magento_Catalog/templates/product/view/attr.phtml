@@ -1,0 +1,10 @@
+<?php
+    $_product = $block->getProduct();
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$contentParser = $objectManager->get('Magento\Cms\Model\Template\FilterProvider');
+?>
+
+<?php if($_product->getData('testinfo')):?>
+<p>Testing Info : <?php echo $_product->getResource()->getAttribute('testinfo')->getFrontend()->getValue($_product);?></p>
+<?php endif;?>
+
